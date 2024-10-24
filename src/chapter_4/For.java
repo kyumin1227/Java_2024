@@ -13,8 +13,28 @@ public class For {
 //            System.out.println(pos);
 //        }
 
-        for (char chValue = 'Z'; chValue >= 'A'; chValue -= 2) {
-            System.out.println(chValue);
+//        for (char chValue = 'Z'; chValue >= 'A'; chValue -= 2) {
+//            System.out.println(chValue);
+//        }
+
+//        for (int n = 1; n < 21; n++) {
+//            if (n % 7 == 0) {
+//                System.out.println(n);
+//            }
+//        }
+
+//        for (int n = 10; n > 0; n--) {
+//            System.out.print(n + " ");
+//        }
+
+        int[] bar = new int[3];
+
+        for (int i = 0, j = 10; i < bar.length; i++, j += 10) {
+            bar[i] = j;
+        }
+
+        for (int num : bar) {
+            System.out.print(num + ", ");
         }
     }
 }
