@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TwoDimensional {
     static float[] getSumAvg(int a, int b, int c) {
-        float result[] = new float[2];
+        float[] result = new float[2];
 
         result[0] = a + b + c;
         result[1] = result[0] / 3;
@@ -23,6 +23,8 @@ public class TwoDimensional {
             }
             System.out.println();
         }
+
+        float[] sumAvg = getSumAvg(bar[0][0], bar[0][1], bar[0][2]);
 
         int[][] foo = new int[3][];
         foo[0] = new int[20];
