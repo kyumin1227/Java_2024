@@ -8,12 +8,22 @@ class Car {
     }
 }
 
+class Bar {
+    String name;
+
+    Bar(String argName) {
+        System.out.println("Bar 생성자 호출");
+        this.name = argName;
+    }
+
+    void printInfo() {
+        System.out.println(name);
+    }
+}
+
 public class MainTest {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-
-        Car car1 = new Car();
-        car1.name = "fasd";
-        car1.printName();
+        Bar b1 = new Bar("Bar1");
+        b1.printInfo();
     }
 }
