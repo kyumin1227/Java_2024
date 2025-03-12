@@ -1,29 +1,25 @@
 package oop;
 
-class Car {
-    String name;
+import java.net.URLEncoder;
 
-    void printName() {
-        System.out.println(name);
+class HttpBuffer {
+    char[] buffer;
+    HttpBuffer(int size) {
+        buffer = new char[size];
     }
-}
-
-class Bar {
-    String name;
-
-    Bar(String argName) {
-        System.out.println("Bar 생성자 호출");
-        this.name = argName;
+    void setBuffer(String argMsg) {
+        buffer = argMsg.toCharArray();
     }
-
-    void printInfo() {
-        System.out.println(name);
+    // encoding
+    String encode() {
+        return URLEncoder.encode(new String(buffer));
     }
 }
 
 public class MainTest {
     public static void main(String[] args) {
-        Bar b1 = new Bar("Bar1");
-        b1.printInfo();
+        HttpBuffer test = new HttpBuffer(1024);
+        test.setBuffer("http://www.naver.com/?name='test'");
+        System.out.println(test.encode());
     }
 }
