@@ -1,25 +1,31 @@
 package oop;
 
-import java.net.URLEncoder;
+class Bar {
 
-class HttpBuffer {
-    char[] buffer;
-    HttpBuffer(int size) {
-        buffer = new char[size];
+    void prtMsg() {
+        System.out.println(1);
     }
-    void setBuffer(String argMsg) {
-        buffer = argMsg.toCharArray();
+
+    void prtMsg(String msg) {
+        System.out.println(2);
     }
-    // encoding
-    String encode() {
-        return URLEncoder.encode(new String(buffer));
+
+    void prtMsg(String msg, int num) {
+        System.out.println(3);
     }
+
+    void prtMsg(int num, String msg) {
+        System.out.println(4);
+    }
+
 }
 
 public class MainTest {
     public static void main(String[] args) {
-        HttpBuffer test = new HttpBuffer(1024);
-        test.setBuffer("http://www.naver.com/?name='test'");
-        System.out.println(test.encode());
+        Bar bar = new Bar();
+        bar.prtMsg();
+        bar.prtMsg("Hello");
+        bar.prtMsg("Hello", 1);
+        bar.prtMsg(1, "Hello");
     }
 }
