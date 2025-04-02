@@ -1,19 +1,21 @@
 package oop;
 
 public class Student {
-    int korean;
-    int math;
-    int english;
-    int sum;
-    final int NUMBER_OF_SUBJECT = 3;
-
     int id;
     String name;
+    int scoreKorean;
+    int scoreMath;
+    int scoreEnglish;
+    int sum;
+    float avg;
 
-    void setGrade(int korean, int math, int english) {
-        this.korean = korean;
-        this.math = math;
-        this.english = english;
-        this.sum = korean + math + english;
+    int getSum() {
+        sum = scoreKorean + scoreEnglish + scoreMath;
+        return sum;
+    }
+
+    float getAvg() {
+        avg = (float) getSum() / 3;
+        return avg;
     }
 }
