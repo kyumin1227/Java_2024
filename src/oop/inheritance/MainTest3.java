@@ -1,19 +1,22 @@
 package oop.inheritance;
 
-class Student {
-    String name = "홍길동";
-    int age = 20;
+class PrivateTest {
+    private int x = 10;
+}
 
-    @Override
-    public String toString() {
-        return "이름: " + name + ", 나이: " + age;
+class PrivateTest2 extends PrivateTest {
+
+    void prt() {
+        System.out.println("x = " + x); // private 멤버는 상속받지 못함
+        System.out.println("x = " + super.x); // private 멤버는 상속받지 못함
     }
 }
 
 public class MainTest3 {
     public static void main(String[] args) {
-        Student std = new Student();
-        System.out.println("이름: " + std.name + ", 나이: " + std.age);
-        System.out.println(std);    // toString() 메서드 호출
+        PrivateTest2 pt2 = new PrivateTest2();
+        pt2.prt(); // private 멤버는 상속받지 못함
+        // System.out.println(pt2.x); // private 멤버는 상속받지 못함
+        // System.out.println(pt2.super.x); // private 멤버는 상속받지 못함
     }
 }
