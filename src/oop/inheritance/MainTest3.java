@@ -7,8 +7,8 @@ class PrivateTest {
 class PrivateTest2 extends PrivateTest {
 
     void prt() {
-        System.out.println("x = " + x); // private 멤버는 상속받지 못함
-        System.out.println("x = " + super.x); // private 멤버는 상속받지 못함
+//        System.out.println("x = " + x); // private 멤버는 상속받지 못함
+//        System.out.println("x = " + super.x); // private 멤버는 상속받지 못함
     }
 }
 
